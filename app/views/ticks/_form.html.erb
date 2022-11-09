@@ -1,0 +1,42 @@
+<%= form_with(model: tick) do |form| %>
+  <% if tick.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(tick.errors.count, "error") %> prohibited this tick from being saved:</h2>
+
+      <ul>
+        <% tick.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :ticker_id, style: "display: block" %>
+    <%= form.text_field :ticker_id %>
+  </div>
+
+  <div>
+    <%= form.label :value, style: "display: block" %>
+    <%= form.text_field :value %>
+  </div>
+
+  <div>
+    <%= form.label :delta_day, style: "display: block" %>
+    <%= form.text_field :delta_day %>
+  </div>
+
+  <div>
+    <%= form.label :delta_week, style: "display: block" %>
+    <%= form.text_field :delta_week %>
+  </div>
+
+  <div>
+    <%= form.label :delta_month, style: "display: block" %>
+    <%= form.text_field :delta_month %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
